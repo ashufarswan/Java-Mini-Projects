@@ -22,7 +22,7 @@ public class Tictactoe extends JFrame implements ActionListener {
 	
 	private void Home_window() {
 		JPanel p1=new JPanel();
-		JPanel p2=new JPanel();
+		JPanel p2=new JPanel();  
 		b1.setMaximumSize(new Dimension(125,25));
 		b2.setMaximumSize(new Dimension(125,25));
 		b5.setMaximumSize(new Dimension(125,25));
@@ -98,6 +98,11 @@ public class Tictactoe extends JFrame implements ActionListener {
 		}
 		else if(e.getSource()==b2)
 			System.exit(0);
+		else if(e.getSource()==b5) {
+			String str ="This is  tic tac toe(katta zero) game.\nTo win it you need to fill any row,column,diagonal first than other player with your symbol."
+					+ "\nTheir are two symbol X and O.\nBy default player 1 have X symbol.\nPlay,win,enjoy the game.";
+			JOptionPane.showMessageDialog(this,str,"HELP",JOptionPane.INFORMATION_MESSAGE);
+		}
 		else if(e.getSource()==b[0]) {
 			b[0].setText(letter);
 			b[0].setEnabled(false);
@@ -176,7 +181,7 @@ public class Tictactoe extends JFrame implements ActionListener {
 			Home_window();
 		}
 		if(!winner.equals("none")) {
-			JOptionPane.showMessageDialog(this,"Hurray!!!!   "+winner+"   wins........");
+			JOptionPane.showMessageDialog(this,"Hurray!!!!   "+winner+"   wins........","Result",JOptionPane.NO_OPTION);
 			letter="";
 			for(int i=0;i<9;i++) {
 				b[i].setEnabled(true);
@@ -187,7 +192,7 @@ public class Tictactoe extends JFrame implements ActionListener {
 			player1 = true;
 		}
 		if(winner.equals("none")&&count==9) {
-			JOptionPane.showMessageDialog(this,"ohhhh.....It's a Tie!!!!!");
+			JOptionPane.showMessageDialog(this,"ohhhh.....It's a Tie!!!!!","Result",JOptionPane.NO_OPTION);
 			letter="";
 			for(int i=0;i<9;i++) {
 				b[i].setEnabled(true);
