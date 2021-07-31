@@ -168,6 +168,7 @@ public class Tictactoe extends JFrame implements ActionListener {
 		}
 		else if(e.getSource()==b3) {
 			letter = "";
+			count =0;
 			for(int i=0;i<9;i++) {
 				b[i].setEnabled(true);
 				b[i].setText(letter);
@@ -175,6 +176,8 @@ public class Tictactoe extends JFrame implements ActionListener {
 			player1 = true;
 		}
 		else if(e.getSource()==b4) {
+			count = 0;
+			player1 = true;
 			getContentPane().removeAll();
 			repaint();
 			validate();
